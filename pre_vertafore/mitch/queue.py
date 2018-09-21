@@ -28,6 +28,7 @@ class Queue:
             return temp.value
         else:
             print "Queue is empty, can't dequeue"
+            
     def getSize(self):
         return int(self.size)
             

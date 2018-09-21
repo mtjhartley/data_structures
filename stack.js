@@ -36,6 +36,7 @@ class Stack{
         let newNode = new Node(value);
         newNode.setNext(this.head);
         this.head = newNode;
+        return this;
     }
 
     pop(){
