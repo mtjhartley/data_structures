@@ -28,6 +28,7 @@ class SingleLinkedList {
 
     isEmpty() {
         return this.head === null;
+        
     }
 
     addFront(value){
