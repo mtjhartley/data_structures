@@ -28,7 +28,6 @@ class SingleLinkedList {
 
     isEmpty() {
         return this.head === null;
-        
     }
 
     addFront(value){
@@ -122,8 +121,14 @@ class SingleLinkedList {
         }
         previous.setNext(current.getNext());
         current.setNext(null);
-        this.printList();
         return true;
+    }
+
+    removeValue(targetValue){
+        if (this.isEmpty()|| !this.findValue(targetValue)){
+            return false;
+        }
+        return this.removeAtIndex(this.findValue(targetValue));
     }
 
 
@@ -153,4 +158,12 @@ myList.findValue(3);
 myList.findValue(4);
 myList.printList();
 myList.removeAtIndex(2);
+myList.printList();
+
+myList.addBack(3);
+myList.addBack(5);
+myList.addBack(7);
+myList.printList();
+myList.removeValue(3);
+myList.printList();
 
