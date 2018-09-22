@@ -37,13 +37,14 @@ const rotateArrayLeft = (arr, k) => {
 console.log(rotateArrayRight(myArray, 3));
 console.log(rotateArrayLeft(myArray2, 3));
 
+const shuffleArray = (arr) => {
+    for (var i = 0; i < arr.length; i++){
+        let randomIdx = Math.floor(Math.random() * arr.length);  
+        temp = arr[i];
+        arr[i] = arr[randomIdx];
+        arr[randomIdx] = temp;
+    }
+    return arr;
+}
 
-			
-// void RotateArray(std::vector &V,int k){
-//     int len = V.size();
-//     for(int index =0,key=k ;index0;index++,key–)
-//     {
-//     char temp = V[index];
-//     V[index]= V[len -key];
-//     V[len -key] = temp;
-//     }
+console.log(shuffleArray([1,2,3,4,5]));
