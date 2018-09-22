@@ -17,6 +17,29 @@ const removeDuplicates = (myString) => {
     return newString;
 }
 
+const removeDuplicatesUsingMap = (myString) => {
+    let myMap = {};
+    let newString = "";
+
+    [...myString].forEach((char) => {
+        if (!myMap.hasOwnProperty(char)){
+            myMap[char] = true;
+            newString += char;
+        }
+    });
+    return newString
+}
+
+const removeDuplicatesUsingArray = (myString) => {
+    let myArray = [];
+    [...myString].forEach((char) =>{
+        if (!myArray.includes(char)){
+            myArray.push(char);
+        }
+    });
+    return myArray.join('');
+}
+
 const removeDuplicatesInPlaceForSorted = (myString) => {
     stringArray = [...myString];
     stringArray.sort();
@@ -40,7 +63,10 @@ const removeDuplicatesInPlaceForSorted = (myString) => {
 
 // console.log(removeDuplicates("abcdeabcdefghijsldkfdsezzzefx"));
 
+console.log(removeDuplicatesUsingMap("abcdeabcdefghijsldkfdsezzzefx"));
+console.log(removeDuplicatesUsingArray("abcdeabcdefghijsldkfdsezzzefx"));
+
 //console.log(removeDuplicatesInPlaceForSorted("cabcdedd"));
 
-console.log(removeDuplicatesInPlaceForSorted("abcdeabcdefghijsldkfdsezzzefx"));
+//console.log(removeDuplicatesInPlaceForSorted("abcdeabcdefghijsldkfdsezzzefx"));
 
