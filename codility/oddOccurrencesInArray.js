@@ -10,7 +10,7 @@ function solution(A) {
     });
 
     var key = Object.keys(charHasDupe).filter((elem) => {
-        return charHasDupe[elem] == false;
+        return charHasDupe[elem.toString()] == false;
     })
     return key[0];
 }
