@@ -178,3 +178,9 @@ var oneNode = new Node(1);
 var twoNode = new Node(5);
 console.log(bst.lowestCommonAncestor(.375, .5)
 );
+
+const inorderTraversal = root => {
+    if (!root) return [];
+    
+    return [...inorderTraversal(root.left), root.val, ...inorderTraversal(root.right)]
+  };
