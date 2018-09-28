@@ -1,9 +1,5 @@
 const Stack = require('./stack').Stack;
 
-var myStack = new Stack();
-
-
-
 class QueueUsingStacks{
     constructor(){
         this.s1 = new Stack();
