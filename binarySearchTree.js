@@ -159,7 +159,8 @@ bst.insert(5);
 
 bst.insert(4);
 bst.insert(6);
-
+bst.insert(7);
+console.log(bst.height());
 bst.insert(.5);
 bst.insert(2);
 bst.insert(.25);
