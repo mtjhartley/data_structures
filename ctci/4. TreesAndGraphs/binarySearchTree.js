@@ -117,6 +117,46 @@ class BST{
         return node;
     }
 
+    lowestCommonAncestor(node = this.root, value1, value2){
+        while (node){
+            if (node.value > value1 && node.value > value2){
+                node = node.left;
+            } else if (node.value < value1 && node.value < value2){
+                node = node.right
+            } else {
+                break;
+            }
+        }
+        return node;
+    }
+
+    lowestCommonAncestorRecursive(node = this.root, value1, value2){
+        if (!node) return null;
+
+        if (node.value > value1 && node.value > value2){
+            return this.lowestCommonAncestorRecursive(node.left, value1, value2);
+        }
+        if (node.value < value1 && node.value < value2){
+            return this.lowestCommonAncestorRecursive(node.right, value1, value2)
+        }
+        return node;
+    }
+
+//     struct node *lca(struct node* root, int n1, int n2) 
+// { 
+//     if (root == NULL) return NULL; 
+  
+//     // If both n1 and n2 are smaller than root, then LCA lies in left 
+//     if (root->data > n1 && root->data > n2) 
+//         return lca(root->left, n1, n2); 
+  
+//     // If both n1 and n2 are greater than root, then LCA lies in right 
+//     if (root->data < n1 && root->data < n2) 
+//         return lca(root->right, n1, n2); 
+  
+//     return root; 
+// } 
+
     //delete has 3 cases, delete a leaf, one child, two children
     //deleting a leaf is straight forward
     //deleting a node with one child, just point the parent to the grand child
@@ -143,11 +183,12 @@ binarySearchTree.add(175);
 // console.log(binarySearchTree.contains(25))
 //console.log("*************")
 //Expecting 25, 50, 100, 125, 150, 175
-binarySearchTree.printInOrder();
-binarySearchTree.remove(100);
+// binarySearchTree.printInOrder();
+// binarySearchTree.remove(100);
 console.log("*************")
-binarySearchTree.printInOrder();
-
+// binarySearchTree.printInOrder();
+console.log(binarySearchTree.lowestCommonAncestor(rootNode, 75, 125));
+console.log(binarySearchTree.lowestCommonAncestorRecursive(rootNode, 75, 125)); //O(height), plus O(height) space for the callstack
 // console.log("*************")
 //Expecting 100, 50, 25, 125, 150, 175
 //binarySearchTree.printPreOrder();
