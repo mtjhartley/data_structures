@@ -12,7 +12,6 @@ const quickSort = (arr, left = 0, right = arr.length-1) => {
     if (partitionIndex < right) {
         quickSort(arr, partitionIndex, right);
     }
-
     return arr;
 }
 
