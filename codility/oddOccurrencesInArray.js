@@ -15,17 +15,16 @@ function solution(A) {
     return key[0];
 }
 
-function solution(A) {
-    // write your code in JavaScript (Node.js 4.0.0)
+// function solution(A) {
+//     // write your code in JavaScript (Node.js 4.0.0)
+//     var agg = 0;
     
-    var agg = 0;
+//     for(var i=0; i<A.length; i++) {
+//         agg ^= A[i];
+//     }
     
-    for(var i=0; i<A.length; i++) {
-        agg ^= A[i];
-    }
-    
-    return agg;
-}
+//     return agg;
+// }
 
 
 console.log(solution([1,2,3,1,3,2,5]));

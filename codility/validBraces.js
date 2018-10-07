@@ -17,11 +17,15 @@ function solution(S) {
             stack.pop();
         }
         else if (symbolDict.hasOwnProperty(S[i]) && stack[stack.length-1] != symbolDict[S[i]]){
-            return 0;
+            return false;
         }
         else {
             console.log("nothing found here...")
         }
     }
-    return stack.length === 0 ? 1 : 0;
+    return stack.length === 0 ? true : false;
 }
+
+var sol = solution("{{}}{}{()}");
+var sol2 = solution("{{}}{}{(cxxc))))}");
+console.log({sol, sol2});
