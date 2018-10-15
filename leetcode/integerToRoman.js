@@ -13,6 +13,7 @@ const intToRoman = (num) => {
     var n = num.toString().split('');
     var word = '';
     
+    console.log(n);
     for(var i = 0; i < n.length; i++) {
       word += map[n.length - i - 1][parseInt(n[i])];
     }
@@ -27,4 +28,5 @@ var map = [
     ['', 'M', 'MM', 'MMM']
   ];
 
-intToRoman(3234);
+var romanNum = intToRoman(3234);
+console.log({romanNum});

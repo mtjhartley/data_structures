@@ -3,7 +3,7 @@ const fibonacciWorst = (i) => {
     if (i == 1) return 1;
     return (fibonacciWorst(i-1) + fibonacciWorst(i-2));
 }
-//The time complexity is O(n^2) draw it out as a tree
+//The time complexity is O(2^n) draw it out as a tree
 //console.log(fibonacciWorst(1000));
 
 const fibonacciWithMemo = (i, memo = {}) => {

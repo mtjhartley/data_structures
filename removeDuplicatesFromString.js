@@ -48,25 +48,25 @@ const removeDuplicatesInPlaceForSorted = (myString) => {
     result_index = 1;
     total_index = 1;
 
-    while (total_index != stringArray.length){
+    while (total_index < stringArray.length){
         if (stringArray[total_index] != stringArray[total_index-1]){
             stringArray[result_index] = stringArray[total_index];
             result_index += 1;
         }
         total_index += 1;
     }
-
-    return stringArray.slice(0, result_index).toString();
+    return stringArray.slice(0, result_index).join('');
 
 }
 // console.log(removeDuplicates("aaaaaa"));
 
 // console.log(removeDuplicates("abcdeabcdefghijsldkfdsezzzefx"));
 
-console.log(removeDuplicatesUsingMap("abcdeabcdefghijsldkfdsezzzefx"));
-console.log(removeDuplicatesUsingArray("abcdeabcdefghijsldkfdsezzzefx"));
+//console.log(removeDuplicatesUsingMap("abcdeabcdefghijsldkfdsezzzefx"));
+//console.log(removeDuplicatesUsingArray("zzcdeabcdefghijsldkfdsezzzefx"));
 
 //console.log(removeDuplicatesInPlaceForSorted("cabcdedd"));
 
-//console.log(removeDuplicatesInPlaceForSorted("abcdeabcdefghijsldkfdsezzzefx"));
+console.log(removeDuplicatesInPlaceForSorted("abcdeabcdefghijsldkfdsezzzefx"));
+console.log(removeDuplicatesInPlaceForSorted("bacbcdedd"));
 

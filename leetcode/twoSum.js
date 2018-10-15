@@ -23,9 +23,10 @@ const twoSum = (nums, target) => {
             console.log(nums[map[nums[i]]])
             return [map[nums[i]], i];
         } else {
-            map[target-nums[i]] = i;
+            map[target - nums[i]] = i;
         }
     }
 }
 
 console.log(twoSum([1,10,3,5], 11));
+console.log(twoSum([1,10,3,5], 4));

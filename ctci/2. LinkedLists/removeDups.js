@@ -181,6 +181,23 @@ const removeDuplicatesUsingHash = (linkedList) => {
     return linkedList;
 }
 
+// 1 2 1 3
+// current = 1
+// previous = null
+// map = { 1: true}
+// previous = 1
+// current = 2
+// --------------
+// current = 2
+// map = {1: true, 2: true}
+// previous = 2
+// current = 1
+// ----------
+// current = 1
+// if (map{1} true!)
+// previous = 2.next = current = 1.next == 3
+// 1, 2, 3
+
 // var uniqueLL = removeDuplicates(myLL);
 // uniqueLL.printList();
 

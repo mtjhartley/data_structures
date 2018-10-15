@@ -28,7 +28,7 @@ class Stack{
             console.log("can't peek, empty stack");
 
         } else {
-            console.log("The top of the stack is " + this.head.getValue());
+            //console.log("The top of the stack is " + this.head.getValue());
             return this.head;
         }
     }

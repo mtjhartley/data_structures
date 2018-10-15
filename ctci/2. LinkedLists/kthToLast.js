@@ -137,13 +137,13 @@ class SingleLinkedList {
 var myLL = new SingleLinkedList();
 
 myLL.addBack(1);
-myLL.addBack(1);
-myLL.addBack(2);
-myLL.addBack(4);
-myLL.addBack(3);
 myLL.addBack(2);
 myLL.addBack(3);
 myLL.addBack(4);
+myLL.addBack(5);
+myLL.addBack(6);
+myLL.addBack(7);
+myLL.addBack(8);
 
 myLL.printList();
 
@@ -161,3 +161,4 @@ const findKthToLast = (linkedList, k) => {
 
 console.log(findKthToLast(myLL, 0));
 console.log(findKthToLast(myLL, 1));
+console.log(findKthToLast(myLL, 8));

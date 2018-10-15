@@ -4,12 +4,10 @@ const printParenthesis = (openCount, closedCount = 0, s = "", memo=[]) => {
         memo.push(s);
     }
     if (openCount > 0){
-        s += "{";
-        printParenthesis(openCount-1, closedCount+1, s, memo);
+        printParenthesis(openCount-1, closedCount+1, s+"{", memo);
     }
     if (closedCount > 0){
-        s += "}";
-        printParenthesis(openCount, closedCount-1, s, memo);
+        printParenthesis(openCount, closedCount-1, s+"}", memo);
     }
 
     return memo;

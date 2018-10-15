@@ -17,8 +17,8 @@ const quickSort = (arr, left = 0, right = arr.length-1) => {
 
 const partition = (arr, left, right) => {
     // console.log("the values of left and right are", left, right)
-    var midPoint = Math.floor((left+right)/2);
-    var pivot = arr[midPoint];
+    var pivotIndex = Math.floor(Math.random() * right);
+    var pivot = arr[pivotIndex];
     // console.log("the pivot point is: ", pivot)
 
     while (left <= right){

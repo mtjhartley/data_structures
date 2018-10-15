@@ -1,4 +1,3 @@
-//Write code to find the kth to last element of a singly linked list
 class Node {
     constructor(value) {
         this.value = value;
@@ -156,11 +155,13 @@ const isPalindrome = (linkedList) => {
         stack.push(slow.value);
         slow = slow.next;
         fast = fast.next.next;
+        console.log("executing first while")
     }
 
     //odd number of elements, skip the middle element.
     if (fast){
         slow = slow.next;
+        console.log({slow})
     }
 
     while (slow){
@@ -175,3 +176,24 @@ const isPalindrome = (linkedList) => {
 }
 
 console.log(isPalindrome(myLL));
+
+// var myLL2 = new SingleLinkedList();
+
+// myLL2.addBack(1);
+// myLL2.addBack(2);
+// myLL2.addBack(2);
+// myLL2.addBack(1);
+
+// myLL2.printList();
+// console.log(isPalindrome(myLL2));
+
+// 1 2 3 2 1 
+// 1 2 3
+// 1 3 1
+
+// stack = [1, 2]
+
+// still fast, skip one slow
+
+// going to 2
+

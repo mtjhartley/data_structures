@@ -34,11 +34,11 @@ class SingleLinkedList {
         let newNode = new Node(value);
         if (this.isEmpty()) {
             this.head = newNode;
-            return true;
+            return this;
         } else {
             newNode.setNext(this.head);
             this.head = newNode;
-            return true;
+            return this;
         }       
     }
 
@@ -54,19 +54,21 @@ class SingleLinkedList {
         }
         strList += "]"
         console.log(strList);
+        return this;
     }
 
     addBack(value) {
         let newNode = new Node(value);
         if (this.isEmpty()) {
             this.head = newNode;
-            return true;
+            return this;
         }
         let current = this.head;
         while (current.getNext()) {
             current = current.getNext();
         }
         current.setNext(newNode);
+        return this;
     }
 
     size(){
@@ -130,12 +132,6 @@ class SingleLinkedList {
         }
         return this.removeAtIndex(this.findValue(targetValue));
     }
-
-
-
-    //removeAtIndex
-
-    //removeValue
 }
 
 

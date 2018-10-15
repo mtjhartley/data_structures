@@ -37,17 +37,25 @@ unsortedStack.push(8);
 unsortedStack.push(30);
 unsortedStack.peek();
 var sortStack = (stack) => {
-    var r = new Stack();
+    var tempStack = new Stack();
     while (!stack.isEmpty()){
         var temp = stack.pop();
-        console.log("this is temp", temp);
-        while (!r.isEmpty() && r.peek().value > temp.value){
-            stack.push(r.pop().value);
+        //console.log("this is temp", temp);
+        while (!tempStack.isEmpty() && tempStack.peek().value > temp.value){
+            stack.push(tempStack.pop().value);
         }
-        r.push(temp.value);
+        tempStack.push(temp.value);
+        console.log("logging tempstack", tempStack)
+        // console.log(tempStack);
     }
-    while (!r.isEmpty()){
-        stack.push(r.pop().value);
+    //done sorting
+    // console.log("Done sorting")
+    // console.log(stack);
+    // console.log(tempStack);
+    while (!tempStack.isEmpty()){
+        console.log({stack, tempStack})
+        console.log("BIG PUSH")
+        stack.push(tempStack.pop().value);
     }
 }
 
@@ -56,4 +64,4 @@ sortStack(unsortedStack);
 unsortedStack.peek().value;
 console.log(unsortedStack.head);
 console.log(unsortedStack.head.next.next.next.next);
-
+console.log("**");
