@@ -9,6 +9,7 @@ class BST{
         return this.root === null;
     }
 
+    //MOVING LEFT TO RIGHT THROUGH A TREE
     printInOrder(node = this.root){
         if (node != null){
             this.printInOrder(node.left);
@@ -17,6 +18,16 @@ class BST{
         }
     }
 
+    getInOrder(node = this.root, memo = []){
+        if (node != null){
+            this.getInOrder(node.left, memo);
+            memo.push(node.value);
+            this.getInOrder(node.right, memo);
+        }
+        return memo;
+    }
+
+    //CREATING A COPY OF THE TREE
     printPreOrder(node = this.root){
         if (node != null){
             console.log(node.value);
@@ -25,12 +36,32 @@ class BST{
         }
     }
 
+    getPreOrder(node = this.root, memo = []){
+        if (node != null){
+            memo.push(node.value);
+            this.getPreOrder(node.left, memo);
+            this.getPreOrder(node.right, memo);
+        }
+        return memo;
+    }
+
+
+    //REMOVAL OF NODES FROM THE TREE
     printPostOrder(node = this.root){
         if (node != null){
             this.printPostOrder(node.left);
             this.printPostOrder(node.right);
             console.log(node.value);
         }
+    }
+
+    getPostOrder(node = this.root, memo = []){
+        if (node != null){
+            this.getPostOrder(node.left, memo);
+            this.getPostOrder(node.right, memo)
+            memo.push(node.value);
+        }
+        return memo;
     }
 
     add(value){
@@ -192,3 +223,22 @@ console.log(binarySearchTree.lowestCommonAncestorRecursive(rootNode, 75, 125)); 
 // console.log("*************")
 //Expecting 100, 50, 25, 125, 150, 175
 //binarySearchTree.printPreOrder();
+
+
+
+binarySearchTree.printInOrder();
+
+var inOrderArray = binarySearchTree.getInOrder();
+console.log(inOrderArray);
+
+var preOrderArray = binarySearchTree.getPreOrder();
+console.log(preOrderArray);
+
+var newTree = new BST();
+newTree.root = new bstNode(preOrderArray[0]);
+for (var i = 1; i < preOrderArray.length; i++){
+    newTree.add(preOrderArray[i]);
+}
+
+console.log(newTree.getPreOrder());
+// console.log(newTree.getPostOrder());
