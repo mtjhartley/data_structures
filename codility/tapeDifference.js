@@ -39,3 +39,12 @@ const tapeDifference = (array) => {
 
 var foo = tapeDifference([1,3,5,4,2,6,1]);
 console.log(foo);
+
+
+for (var i = 0; i < 5; i++){
+    var array = [];
+    for (var j = i; j < 5; j++){
+        array.push([i, j])
+    }
+    console.log(array);
+}
